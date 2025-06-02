@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Museum — Corrected Structure</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="#floor1">Ground Floor</a>
+  <a href="#basement">Basement</a>
+  <a href="#mainfloor">Main Floor</a>
+  <a href="about.html">About ChronoScope</a>
+
+</nav>
+
+  
+
+     <!-- About museum -->
+<section id="scroll-intro">
+  <div class="scroll-container">
+    <div class="scroll-item">
+      <h2>📍 Location & Origins</h2>
+      <p>
+        The Bologna Archaeological Museum has been housed since 1881 in the historic Palazzo Galvani, formerly the Ospedale della Morte. It overlooks the iconic Piazza Maggiore and the eastern façade of the Basilica of San Petronio.
+        <br><br>
+        The museum was created to preserve ancient academic and civic collections, while also showcasing a vast trove of archaeological discoveries from Bologna and its region. These findings span a timeline from prehistoric settlements to the Roman era.
+      </p>
+    </div>    
+
+    <div class="scroll-item">
+      <h2>🏺 Collections</h2>
+      <p>
+        The museum hosts extraordinary collections from Greek, Etrusco-Italic, and Roman civilizations. Many objects derive from prestigious donations — including the Cospis, Marsili, and Palagi families.
+        <br><br>
+        Notable highlights include the Etruscan funerary objects excavated from the Certosa necropolis (still under exploration), and a major Egyptian collection — the third most important in Italy, reorganized in 1994 using cutting-edge museological methods.
+        <br><br>
+        Two large collections remain in storage: the Medagliere, with over 100,000 coins and medals, and further Etruscan artifacts not yet on display.
+      </p>
+    </div>
+
+    <div class="scroll-item">
+      <h2>🕰️ Historic Legacy</h2>
+      <p>
+        Before the museum’s official opening in 1881, a smaller exhibition was created in 1871 for the 5th International Congress of Prehistoric Anthropology and Archaeology.
+        <br><br>
+        Despite modern interventions, many exhibition rooms still preserve their original 19th-century appearance. These halls stand as rare examples of post-unification Italian museography, harmonizing historical atmosphere with contemporary upgrades.
+        <br><br>
+        Until 1985, the museum also included Medieval and Modern sections, which were later moved to form Bologna’s Civic Medieval Museum.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+
+
+
+<section id="floor1" class="overlay-section" style="background-image: url('lapidarium.jpg');">
+  <h2>Ground Floor — Lapidarium</h2>
+  <p class="floor-description">
+    This floor houses the Lapidarium, featuring Roman and early Christian stone sculptures and inscriptions.  
+    Highlights include artefacts, offering insight into religious and cultural transitions of the Late Empire.
+  </p>
+  <div class="floor-layout">
+     <!-- Button -->
+     <div class="centered-button">
+      <a href="#basement" class="btn round-elegant">↓</a>
+    </div>
+
+    <!--  Angel -->
+    <div class="object-block">
+      <model-viewer src="models/angel.glb" alt="Sculptures of Angels" auto-rotate camera-controls></model-viewer>
+      <div class="info-box">
+        <h3>Sculptures</h3>
+        <p>Late Roman or Early Christian Period,<br>
+           4th–5th century CE.<br><br>
+           Marble figures interpreted as angels or spiritual messengers.<br>
+           These early Christian motifs reflect the blending of Roman artistic traditions<br>
+           with emerging Christian iconography.
+        </p>
+      </div>
+    </div>
+
+
+    <!--  Horses -->
+    <div class="object-block">
+      <model-viewer src="models/horse.glb" alt="Two Horses" auto-rotate camera-controls></model-viewer>
+      <div class="info-box">
+        <h3>Two Horses</h3>
+        <p>Roman Period, 1st–2nd century CE.<br><br>
+           Remains of two horses discovered in a funerary or ceremonial context.<br>
+           Their preservation provides insight into Roman burial practices<br>
+           and the role of animals in Roman society.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="basement" class="overlay-section" style="background-image: url('egyptian.jpg'); position: relative;">
+  <h2>Basement — Egyptian Gallery</h2>
+  <p class="floor-description">
+    The basement is home to the Egyptian collection, the third-largest in Italy, with around 3,500 artifacts.  
+    It includes artefacts — reflecting thousands of years of spiritual and everyday life in ancient Egypt.
+  </p>  
+
+     <!-- Mummia -->
+  <model-viewer src="models/mummia.glb" alt="Cat Mummy Coffin" auto-rotate camera-controls></model-viewer>
+  <div class="info-box">
+    <h3>Mummia di Usai</h3>
+    <p>26th Dynasty, linen-wrapped with amulets inside.<br>
+       Son of Nekhet, from Thebes.
+    </p>
+  </div>
+   <!--  Scarab -->
+  <model-viewer src="models/scarab.glb" alt="Animal Mummy Coffin" auto-rotate camera-controls></model-viewer>
+  <div class="info-box">
+    <h3>The Scarab Beetle</h3>
+    <p>The Scarab Beetle: Symbolizing the god Khepri,<br>
+       this beetle was connected to creation and regeneration.<br><br>
+       Scarab amulets were commonly placed with the dead<br>
+       to ensure their rebirth in the afterlife.
+    </p>
+  </div>
+   <!-- Door -->
+  <model-viewer src="models/door.glb" alt="Animal Mummy Coffin" auto-rotate camera-controls></model-viewer>
+  <div class="info-box">
+    <h3>Egyptian False Door, about 2400 BCE</h3>
+    <p>A false door was the focal point of the cult of the deceased in ancient Egypt.<br><br>
+       This was the interface between the world of the living<br>
+       and the world of the dead.
+    </p>
+  </div>
+
+  <a href="#mainfloor" class="btn">↓ Go to Main Floor</a>
+</section>
+
+<section id="mainfloor" class="overlay-section" style="background-image: url('etruscan.jpg');">
+  <h2>Main Floor — Etruscan & Classical Collections</h2>
+  <p class="floor-description">
+    The main floor showcases Etruscan, Greek, and Roman material culture — especially from ancient Felsina (Bologna).  
+    Visitors can explore artefacts spanning from the 9th century BCE to the Imperial Roman age.
+  </p>
+  
+   <!--  Vase-->
+  <model-viewer src="models/vase.glb" alt="Etruscan Vase" auto-rotate camera-controls></model-viewer>
+  <div class="info-box">
+    <h3>Red-Figure Vase</h3>
+    <p>Attica, 5th century BCE.<br><br>
+       Ceramic vessel with rare metallic ornamentation.<br>
+       Used for ritual or ceremonial purposes,<br>
+       it showcases early experimentation with mixed materials<br>
+       in classical craftsmanship.
+    </p>
+  </div>
+
+  <a href="#floor1" class="btn">↑ Back to Ground Floor</a>
+</section>
+
+
+  <section id="twine-intro" class="twine-intro">
+    <h2 class="standard-heading">
+      Trying to discover the past, do not lose yourself
+    </h2>
+    <h1>🔎 Start Investigation</h1>
+  
+    <div class="centered-button">
+      <a href="#twine-frame" class="round-elegant">
+        ↓
+      </a>
+    </div>
+
+
+<!-- Twine Game Section -->
+<section id="twine" class="overlay-section" style="background: #000; padding: 3rem 1rem; text-align: center; color: white;">
+  <div style="margin-bottom: 2rem;">
+    <iframe id="twine-frame" src="twine.html" width="100%" height="700px" style="border: none;"></iframe>
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <a href="#floor1" class="btn">↑ Back to museum</a>
+  </div>
+</section>
+
+
+<script>
+  const container = document.querySelector('#scroll-intro');
+  const items = document.querySelectorAll('.scroll-item');
+  
+  function updateActiveCard() {
+    const containerRect = container.getBoundingClientRect();
+    const containerCenter = containerRect.left + containerRect.width / 2;
+  
+    let closestItem = null;
+    let minDistance = Infinity;
+  
+    items.forEach(item => {
+      const itemRect = item.getBoundingClientRect();
+      const itemCenter = itemRect.left + itemRect.width / 2;
+      const distance = Math.abs(containerCenter - itemCenter);
+  
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestItem = item;
+      }
+    });
+  
+    items.forEach(item => item.classList.remove('active'));
+    if (closestItem) {
+      closestItem.classList.add('active');
+    }
+  }
+  
+  container.addEventListener('scroll', () => {
+    requestAnimationFrame(updateActiveCard); // чтобы не грузить браузер
+  });
+  
+
+</script>
+
+
+</body>
+</html>

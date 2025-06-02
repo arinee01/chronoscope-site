@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About ChronoScope</title>
+  <style>
+    .back-home {
+        text-align: center;
+        padding: 60px 20px;
+      }
+      
+      .home-btn {
+        display: inline-block;
+        padding: 14px 30px;
+        background-color: #FFD700;
+        color: #111;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+        border-radius: 40px;
+        transition: background-color 0.3s;
+      }
+      
+      .home-btn:hover {
+        background-color: #e0c200;
+      }
+      
+      .team-section {
+        text-align: center;
+        padding: 80px 20px;
+        background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный тёмный фон */
+        border-radius: 20px;
+        margin: 60px 40px;
+        backdrop-filter: blur(5px);
+      }
+      
+      .team-section h2 {
+        color: #FFD700;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+      }
+      
+      .team-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      
+      .team-member {
+        max-width: 220px;
+      }
+      
+      .team-member img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #FFD700;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+      }
+      
+      .team-member img:hover {
+        transform: scale(1.05);
+      }
+      
+      .team-member h3 {
+        margin: 10px 0 5px;
+        font-size: 1.3em;
+        color: #fff;
+      }
+      
+      .team-member p {
+        font-size: 0.95em;
+        color: #ccc;
+        margin: 0;
+      }
+      
+      .team-member .desc {
+        font-size: 0.85em;
+        margin-top: 10px;
+        color: #aaa;
+      }
+      
+      body {
+        margin: 0;
+        background: url('about.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Segoe UI', sans-serif;
+        color: #fff;
+        overflow-x: hidden;
+      }
+      
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 3em;
+      color: #FFD700;
+    }
+
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 60px 20px;
+      gap: 30px;
+      scroll-behavior: smooth;
+    }
+
+    .card {
+        flex: 0 0 420px;
+        scroll-snap-align: center;
+        background-color: rgba(0, 0, 0, 0.5); /* полупрозрачный фон */
+        backdrop-filter: blur(6px);          /* стеклянный эффект */
+        -webkit-backdrop-filter: blur(6px);  /* для Safari */
+        padding: 40px;
+        border-radius: 20px;
+        transition: transform 0.4s, opacity 0.4s;
+        opacity: 0.6;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1); /* лёгкая рамка */
+      }
+      
+    .card.active {
+      transform: scale(1.15);
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.65); /* чуть плотнее, чем обычные */
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .card h2 {
+      color: #FFD700;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1em;
+      line-height: 1.5;
+    }
+    .card.ghost {
+        flex: 0 0 400px; /* такая же ширина, как у обычных карточек */
+        background: none;
+        pointer-events: none;
+        opacity: 0;
+      }
+      
+  </style>
+</head>
+<body>
+
+<h1>🕰️ About ChronoScope</h1>
+
+<div class="carousel-container" id="carousel">
+    <div class="card ghost"></div>
+
+  <div class="card">
+    <h2>📌 The Mission</h2>
+    <p>
+      Transform the museum experience into a time-traveling adventure — immersive, playful, and meaningful.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🧩 What We Made</h2>
+    <p>
+      An interactive narrative using Twine, 3D models, sounds, and mobile UI — made to fit tourist attention spans.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🎮 Gamified History</h2>
+    <p>
+      Solve puzzles, meet mysterious characters, and uncover lost artifacts as you move through museum halls.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🔊 Designed to Engage</h2>
+    <p>
+      Each room has a vibe: ambient sound, historical voices, and fictional twists to keep the story alive.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🌍 For Global Tourists</h2>
+    <p>
+      Bilingual, mobile-first, and designed for 30–60 minutes — the app fits short visits and social sharing.
+    </p>
+  </div>
+  <div class="card ghost"></div>
+
+</div>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  const cards = carousel.querySelectorAll('.card');
+
+  function updateActiveCard() {
+    const containerCenter = carousel.scrollLeft + carousel.offsetWidth / 2;
+
+    let closestCard = null;
+    let minDistance = Infinity;
+
+    cards.forEach(card => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const distance = Math.abs(containerCenter - cardCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestCard = card;
+      }
+    });
+
+    cards.forEach(card => card.classList.remove('active'));
+    if (closestCard) closestCard.classList.add('active');
+  }
+
+  carousel.addEventListener('scroll', () => {
+    requestAnimationFrame(updateActiveCard);
+  });
+
+  window.addEventListener('load', updateActiveCard);
+</script>
+<section class="team-section">
+    <h2>💡 Who Made This</h2>
+    <div class="team-container">
+      <div class="team-member">
+        <h3>E. Krasnova</h3>
+        <p>Storyteller & UX Designer</p>
+        <p class="desc">Wrote the narrative, built the user flow, and brought characters to life.</p>
+      </div>
+  
+      <div class="team-member">
+        <h3>A. Gracheva</h3>
+        <p>2D/3D Artist & Web Developer</p>
+        <p class="desc">Created illustrations, 3D content, and the entire site design.</p>
+      </div>
+  
+      <div class="team-member">
+        <h3>M. Jahanian</h3>
+        <p>Prototype Designer</p>
+        <p class="desc">Built the Twine prototype, planned interaction logic, and defined tech structure.</p>
+      </div>
+    </div>
+  </section>
+  <div class="back-home">
+    <a href="index.html" class="home-btn">🏛️ Back to Museum</a>
+  </div>  
+  
+</body>
+</html>
